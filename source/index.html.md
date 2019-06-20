@@ -8,20 +8,86 @@ language_tabs: # must be one of https://git.io/vQNgJ
 toc_footers:
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
-includes:
-  - errors
 
-search: true
 ---
 
 # Introduction
 
 This is the documentation for the Picrafty API. Each block and its
-corresponding python code is documented here.
+corresponding python code is documented here.  
+
+This API is based around three classes given in the Raspberry Juice mod used to control the minecraft game world inside Python scripts  
+1. Minecraft --- Main class for connecting to and interacting with the game.  
+2. Player --- Getting and changing a player's position and settings.  
+3. Entity --- Getting and changing an entity's position and settings.  
+
+This documentation is a spin-off of documentation for Raspberry Juice found at: Add source here.  
+
+
+# Minecraft
+
+
+## Create Minecraft Connection
+
+Create a connection to your particular minecraft.
+
+```python
+mc = Minecraft().create()
+```
+> Creates a default server.
+
+```python
+mc = Minecraft().create("192.162.1.1", 4711)
+```
+> Specify IP Address and Port.
+
+
+## Get Block
+Retrieve block type located at position x, y, z
+
+```python
+blockType = mc.getBlock(0, 0, 0)
+```
+> Retrives block type at position 0,0,0
+
+
+## Get Blocks
+Get all block ids ranging from one position to another.
+
+```python
+blocks = mc.getBlocks(-1, -1, -1, 1, 1, 1)
+for block in blocks:
+   print(block)
+```
+> Prints all block ids in a cuboid.
+
+
+## Get Block with Data
+
+## Set Block
+
+## Set Blocks
+
+## Get Height
+
+## Get Player Entity IDs
+
+## Get Player ID
+
+## Save Checkpoint
+
+## Post to Chat
+```python
+mc.postToChat("Hello Minecraft World")
+```
+> Writes the message "Hello Minecraft World" to the chat window.
+
+## Change a Setting
+
 
 # Minecraft.player
 
-## Get Player Position
+## Get Player's Position
 
 ```Blockly
 
@@ -30,108 +96,49 @@ corresponding python code is documented here.
   mc.player.getPos()
 
 ```
+> Retrieves current position of the player.
 
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
+## Set Player's Position
+Change where you are now to a new position
 ```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
+mc.player.setPos(10, 10, 10)
 ```
+> Sets player's position to be at (10, 10, 10)
 
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
 
-```javascript
-const kittn = require('kittn');
+## Get Tile Position
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
 
-> The above command returns JSON structured like this:
+## Set Tile Position
 
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
 
-This endpoint retrieves a specific kitten.
+## Change a Player Related Setting
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
-### HTTP Request
+## Get Player's Rotation
 
-`GET http://example.com/kittens/<ID>`
 
-### URL Parameters
+## Get Player's Pitch
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
 
-## Delete a Specific Kitten
+## Get Player's Direction
 
-```ruby
-require 'kittn'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
 
-```python
-import kittn
+# Entity
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
+## Get Entity's Position
 
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
+## Set Entity's Position
 
-```javascript
-const kittn = require('kittn');
+## Get Position Underneath Entity
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
+## Set New Position Underneath Entity
 
-> The above command returns JSON structured like this:
+## Get Entity's Rotation
 
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
+## Get Entity's Pitch
 
-This endpoint deletes a specific kitten.
+## Get Entity's Direction
 
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
 
