@@ -63,18 +63,51 @@ for block in blocks:
 
 
 ## Get Block with Data
+```python
+blockObj = mc.getBlockWithData(0,0,0)
+```
+> retrieves a block object for the block at 0,0,0 
 
 ## Set Block
+```python
+mc.setBlock(0, 0, 0, block.DIRT.id)
+```
+> sets a block at an x,y,z coordinate to a particular type.
+
+```python
+mc.setBlock(0,0,0,block.WOOD.id, 1)
+```
+> sets a block to a particular type and subtype.
 
 ## Set Blocks
+```python
+mc.setBlocks(-1, -1, -1, 1, 1, 1, block.STONE.id)
+```
+> Sets many blocks at a time, filling the gap between 2 sets of x,y,z coordinates.
 
 ## Get Height
+```python
+y = mc.getHeight(0,0)
+```
+> Find the y (vertical) of an x,z coordinate which represents the highest (non-air) block.
 
 ## Get Player Entity IDs
+```python
+entityIds = mc.getPlayerEntityIds()
+```
+> get the entity ids of the players connected to the game.
 
 ## Get Player ID
+```python
+entityId = mc.getPlayerId("martinohanlon")
+```
+> Get the entity id of a player named "martinohanlon".
 
 ## Save Checkpoint
+```python
+mc.saveCheckpoint()
+```
+> Save a checkpoint that can be useful for restoring the world
 
 ## Post to Chat
 ```python
@@ -83,9 +116,18 @@ mc.postToChat("Hello Minecraft World")
 > Writes the message "Hello Minecraft World" to the chat window.
 
 ## Change a Setting
+```python
+mc.setting("world_immutable", True)
+```
+> Change world immutable to True.
+
+```python
+mc.setting("nametags_visible", False)
+> Change nametags_visible setting to False.
 
 
 # Minecraft.player
+
 
 ## Get Player's Position
 
@@ -107,38 +149,78 @@ mc.player.setPos(10, 10, 10)
 
 
 ## Get Tile Position
+```python
+```
+> 
 
 
 ## Set Tile Position
+```python
+```
+> 
 
 
 ## Change a Player Related Setting
+```python
+```
+> 
 
 
 ## Get Player's Rotation
+```python
+```
+> 
 
 
 ## Get Player's Pitch
-
+```python
+```
+> 
 
 ## Get Player's Direction
-
+```python
+```
+> 
 
 
 # Entity
+```python
+```
+> 
 
 ## Get Entity's Position
+```python
+```
+> 
 
 ## Set Entity's Position
+```python
+```
+> 
 
 ## Get Position Underneath Entity
+```python
+```
+> 
 
 ## Set New Position Underneath Entity
+```python
+```
+> 
+
 
 ## Get Entity's Rotation
+```python
+```
+> 
 
 ## Get Entity's Pitch
+```python
+```
+> 
 
 ## Get Entity's Direction
-
+```python
+```
+> 
 
