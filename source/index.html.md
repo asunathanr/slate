@@ -150,77 +150,108 @@ mc.player.setPos(10, 10, 10)
 
 ## Get Tile Position
 ```python
+playerPos = mc.player.getPos()
 ```
-> 
+> Get player position as floats
 
 
 ## Set Tile Position
 ```python
+mc.player.setTilePos(1,1,1)
 ```
-> 
+> Move player to tile.
 
 
 ## Change a Player Related Setting
 ```python
+mc.player.setting("autojump", False)
+print("Autojump off, 5 seconds to test.")
+time.sleep(5)
+mc.player.setting("autojump", True)
+print("Autojump back on")
 ```
-> 
+> Turn autojump off and on.
 
 
 ## Get Player's Rotation
 ```python
+playerRot = mc.player.getRotation()
+print(playerRot)
 ```
-> 
+> Get and print player rotation.
 
 
 ## Get Player's Pitch
 ```python
+playerPitch = mc.player.getPitch()
 ```
-> 
+> Get and print player pitch.
 
 ## Get Player's Direction
 ```python
+playerDirection = mc.player.getDirection()
+print(playerDirection)
 ```
-> 
+> Get and print player direction
 
 
 # Entity
-```python
-```
-> 
+
+
 
 ## Get Entity's Position
 ```python
+entityPos = mc.entity.getPos(entityIds[0])
+print("entity pos", entityPos)
 ```
-> 
+> Get player's position
+
 
 ## Set Entity's Position
 ```python
+entityPos = mc.entity.getPos(entityIds[0])
+print("entity pos", entityPos)
+mc.entity.setPos(entityIds[0], 20, 20, 20)
+time.sleep(2)
+mc.entity.setPos(entityIds[0], entityPos)
 ```
 > 
 
 ## Get Position Underneath Entity
 ```python
+ entityTilePos = mc.entity.getTilePos(entityIds[0])
+print("Entity tile pos", entityTilePos)
 ```
-> 
+> Print Position of tile entity is on.
 
 ## Set New Position Underneath Entity
 ```python
+mc.entity.setTilePos(entityIds[0], 15, 1, 25)
+time.sleep(2)
+mc.entity.setTilePos(entityIds[0], entityTilePos)
 ```
-> 
+> Change entity position
 
 
 ## Get Entity's Rotation
 ```python
+entityRot = mc.entity.getRotation(entityIds[0])
+mc.postToChat(entityRot)
 ```
-> 
+> Get entity rotation.
 
 ## Get Entity's Pitch
 ```python
+entityPitch = mc.entity.getPitch(entityIds[0])
+mc.postToChat(entityPitch)
 ```
-> 
+> Get entity pitch
 
 ## Get Entity's Direction
 ```python
+entityDirection = mc.entity.getDirection(entityIds[0])
+mc.postToChat("Entity direction = ")
+mc.postToChat(entityDirection)
 ```
-> 
+> Get entity direction
 
