@@ -29,7 +29,10 @@ This documentation is a spin-off of documentation for Raspberry Juice found at: 
 
 ## Create Minecraft Connection
 
-Create a connection to your particular minecraft.
+Create a connection to your particular minecraft game.
+Inputs:
+* address: address of server
+* port: port on server
 
 ```python
 mc = Minecraft().create()
@@ -123,13 +126,15 @@ mc.setting("world_immutable", True)
 
 ```python
 mc.setting("nametags_visible", False)
+```
 > Change nametags_visible setting to False.
 
 
-# Minecraft.player
-
+# Player
 
 ## Get Player's Position
+
+Outputs a Vec3 object with player's current position.
 
 ```Blockly
 
@@ -142,6 +147,9 @@ mc.setting("nametags_visible", False)
 
 ## Set Player's Position
 Change where you are now to a new position
+### Input
+ x,y,z coordinates (can be grouped in a Vec3 object)
+
 ```python
 mc.player.setPos(10, 10, 10)
 ```
@@ -149,20 +157,23 @@ mc.player.setPos(10, 10, 10)
 
 
 ## Get Tile Position
+Output: Vec3 object of tile coordinates.
 ```python
-playerPos = mc.player.getPos()
+playerPos = mc.player.getTilePos()
 ```
 > Get player position as floats
 
 
 ## Set Tile Position
+Input: x,y,z (can be grouped into a single Vec3 object)
 ```python
 mc.player.setTilePos(1,1,1)
 ```
 > Move player to tile.
 
 
-## Change a Player Related Setting
+## Setting
+Input: x,y,z coordinates (can be grouped as a Vec3 object)
 ```python
 mc.player.setting("autojump", False)
 print("Autojump off, 5 seconds to test.")
@@ -174,6 +185,7 @@ print("Autojump back on")
 
 
 ## Get Player's Rotation
+Output: Rotation angle as float
 ```python
 playerRot = mc.player.getRotation()
 print(playerRot)
@@ -182,12 +194,14 @@ print(playerRot)
 
 
 ## Get Player's Pitch
+Output: Pitch angle as float
 ```python
 playerPitch = mc.player.getPitch()
 ```
 > Get and print player pitch.
 
 ## Get Player's Direction
+Output: Player direction as Vec3 object.
 ```python
 playerDirection = mc.player.getDirection()
 print(playerDirection)
@@ -195,11 +209,12 @@ print(playerDirection)
 > Get and print player direction
 
 
+
 # Entity
 
 
-
 ## Get Entity's Position
+Input: Entity ID (can get using mc.getPlayerIds())
 ```python
 entityPos = mc.entity.getPos(entityIds[0])
 print("entity pos", entityPos)
@@ -208,6 +223,9 @@ print("entity pos", entityPos)
 
 
 ## Set Entity's Position
+Input:
+* Entity ID (can get using mc.getPlayerIds())
+* x,y,z coordinates (can be grouped in Vec3 object)
 ```python
 entityPos = mc.entity.getPos(entityIds[0])
 print("entity pos", entityPos)
@@ -217,7 +235,9 @@ mc.entity.setPos(entityIds[0], entityPos)
 ```
 > 
 
-## Get Position Underneath Entity
+## Get Position of Tile Underneath Entity
+Input: Entity ID
+Output: Vec3 position of the tile that an entity is on.
 ```python
  entityTilePos = mc.entity.getTilePos(entityIds[0])
 print("Entity tile pos", entityTilePos)
@@ -225,6 +245,9 @@ print("Entity tile pos", entityTilePos)
 > Print Position of tile entity is on.
 
 ## Set New Position Underneath Entity
+Input: 
+* Entity ID
+* x,y,z coordinates (can be grouped in a Vec3 object)
 ```python
 mc.entity.setTilePos(entityIds[0], 15, 1, 25)
 time.sleep(2)
@@ -234,6 +257,8 @@ mc.entity.setTilePos(entityIds[0], entityTilePos)
 
 
 ## Get Entity's Rotation
+Input: Entity ID
+Output: Entity rotation angle
 ```python
 entityRot = mc.entity.getRotation(entityIds[0])
 mc.postToChat(entityRot)
@@ -241,6 +266,8 @@ mc.postToChat(entityRot)
 > Get entity rotation.
 
 ## Get Entity's Pitch
+Input: Entity ID
+Output: Entity Pitch Angle
 ```python
 entityPitch = mc.entity.getPitch(entityIds[0])
 mc.postToChat(entityPitch)
@@ -248,10 +275,16 @@ mc.postToChat(entityPitch)
 > Get entity pitch
 
 ## Get Entity's Direction
+Input: Entity ID
+Output: Vec3 object of entity direction.
 ```python
 entityDirection = mc.entity.getDirection(entityIds[0])
 mc.postToChat("Entity direction = ")
 mc.postToChat(entityDirection)
 ```
 > Get entity direction
+
+
+# Block
+
 
