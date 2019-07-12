@@ -1,15 +1,65 @@
 ---
 title: Picrafty API
 
-language_tabs: # must be one of https://git.io/vQNgJ
-  - Blockly
-  - python
-
 toc_footers:
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 
 ---
+# Getting Started
+
+
+## Menu bar
+###Create your own Script
+
+**File Name**: Enter the name of your script. 
+
+**Naming Exceptions**:
+
+Cannot contain the following characters: 
+
+* ? (Question Mark) 
+
+* : (Colon)
+
+* " (Double Quote)
+
+* / (Forward Slash)
+
+* \ (Back Slash)
+
+* | (Veritcal Bar)
+
+* \* (Asterisk)
+ 
+* < (Less Than)
+
+* \> (Greater Than)
+
+**Create Script**:
+
+
+### Save and Load Blocks
+
+Save Workspace to file and load Workspace from file
+
+**Save Blocks**: Saves current Workspace to a file.
+
+**Load Blocks**: Loads Workspace from a file.
+
+### Create and Restore Snapshot
+
+Snapshot is all of the blocks in the current Workspace.
+
+**Create Snapshot**: Saves current state of workspace.
+
+**Restore Snapshot**: Restores the previous snapshot and corresponding code. 
+
+## View your Code
+
+To display code created by current block Workspace, click Code tab.
+
+Click Workspace to return to block view.
 
 # Introduction
 
@@ -21,7 +71,7 @@ This API is based around three classes given in the Raspberry Juice mod used to 
 2. Player --- Getting and changing a player's position and settings.  
 3. Entity --- Getting and changing an entity's position and settings.  
 
-This documentation is a spin-off of documentation for Raspberry Juice found at: Add source here.  
+This documentation is a spin-off of documentation for Raspberry Juice found at: **Add source here**.  
 
 
 # Minecraft
@@ -208,6 +258,9 @@ print(playerDirection)
 ```
 > Get and print player direction
 
+# Position
+
+**COME BACK TO!!!!!** 
 
 
 # Entity
