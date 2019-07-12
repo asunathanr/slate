@@ -77,26 +77,10 @@ This documentation is a spin-off of documentation for Raspberry Juice found at: 
 # Minecraft
 
 
-## Create Minecraft Connection
-
-Create a connection to your particular minecraft game.
-Inputs:
-* address: address of server
-* port: port on server
-
-```python
-mc = Minecraft().create()
-```
-> Creates a default server.
-
-```python
-mc = Minecraft().create("192.162.1.1", 4711)
-```
-> Specify IP Address and Port.
-
-
 ## Get Block
 Retrieve block type located at position x, y, z
+
+<img src="images/GetBlock.png" alt="Get Block" width="250" height="100"/>
 
 ```python
 blockType = mc.getBlock(0, 0, 0)
@@ -107,6 +91,8 @@ blockType = mc.getBlock(0, 0, 0)
 ## Get Blocks
 Get all block ids ranging from one position to another.
 
+<img src="images/GetBlocks.png" alt="Get Blocks" width="250" height="100"/>
+
 ```python
 blocks = mc.getBlocks(-1, -1, -1, 1, 1, 1)
 for block in blocks:
@@ -115,13 +101,23 @@ for block in blocks:
 > Prints all block ids in a cuboid.
 
 
-## Get Block with Data
+## Get Block Type and ID
+Get the block Type and corresponding ID.
+
+<img src="images/GetBlockWithData.png" alt="Get Block with Data" width="250" height="100"/>
+
+
 ```python
 blockObj = mc.getBlockWithData(0,0,0)
 ```
 > retrieves a block object for the block at 0,0,0 
 
 ## Set Block
+Sets a block at an x,y,z coordinate to a particular type.
+
+<img src="images/SetBlock.png" alt="Set Block" width="250" height="100"/>
+
+
 ```python
 mc.setBlock(0, 0, 0, block.DIRT.id)
 ```
@@ -133,51 +129,57 @@ mc.setBlock(0,0,0,block.WOOD.id, 1)
 > sets a block to a particular type and subtype.
 
 ## Set Blocks
+Set many blocks at a time, filling the gap between 2 sets of x,y,z coordinates.
+
+<img src="images/SetBlocks.png" alt="Set several Blocks" width="250" height="100"/>
+
+
 ```python
 mc.setBlocks(-1, -1, -1, 1, 1, 1, block.STONE.id)
 ```
 > Sets many blocks at a time, filling the gap between 2 sets of x,y,z coordinates.
 
 ## Get Height
+Find the Y(vertical) of an x,z coordinate which represents the highest (non-air) block.
+
+<img src="images/GetHeight.png" alt="Get Height" width="250" height="100"/>
+
+
 ```python
 y = mc.getHeight(0,0)
 ```
 > Find the y (vertical) of an x,z coordinate which represents the highest (non-air) block.
 
 ## Get Player Entity IDs
+Get the entity IDs of the players connected to the game.
+
+<img src="images/GetPlayerIds.png" alt="Get IDs of players in game" width="250" height="100"/>
+
+
 ```python
 entityIds = mc.getPlayerEntityIds()
 ```
 > get the entity ids of the players connected to the game.
 
 ## Get Player ID
+Get the entity ID of a player
+
+<img src="images/GetPlayerID.png" alt="Get a Player ID" width="250" height="100"/>
+
 ```python
 entityId = mc.getPlayerId("martinohanlon")
 ```
 > Get the entity id of a player named "martinohanlon".
 
-## Save Checkpoint
-```python
-mc.saveCheckpoint()
-```
-> Save a checkpoint that can be useful for restoring the world
-
 ## Post to Chat
+Writes the message to the chat window
+
+<img src="images/PostToChat.png" alt="Post message to chat" width="250" height="100"/>
+ 
 ```python
 mc.postToChat("Hello Minecraft World")
 ```
 > Writes the message "Hello Minecraft World" to the chat window.
-
-## Change a Setting
-```python
-mc.setting("world_immutable", True)
-```
-> Change world immutable to True.
-
-```python
-mc.setting("nametags_visible", False)
-```
-> Change nametags_visible setting to False.
 
 
 # Player
@@ -186,9 +188,9 @@ mc.setting("nametags_visible", False)
 
 Outputs a Vec3 object with player's current position.
 
-```Blockly
+<img src="images/GetPlayerPos.png" alt="Get Player Position" width="250" height="100"/>
 
-```
+
 ```python
   mc.player.getPos()
 
@@ -199,6 +201,8 @@ Outputs a Vec3 object with player's current position.
 Change where you are now to a new position
 ### Input
  x,y,z coordinates (can be grouped in a Vec3 object)
+ 
+<img src="images/SetPlayerPos.png" alt="Set Player Position" width="250" height="100"/>
 
 ```python
 mc.player.setPos(10, 10, 10)
@@ -220,18 +224,6 @@ Input: x,y,z (can be grouped into a single Vec3 object)
 mc.player.setTilePos(1,1,1)
 ```
 > Move player to tile.
-
-
-## Setting
-Input: x,y,z coordinates (can be grouped as a Vec3 object)
-```python
-mc.player.setting("autojump", False)
-print("Autojump off, 5 seconds to test.")
-time.sleep(5)
-mc.player.setting("autojump", True)
-print("Autojump back on")
-```
-> Turn autojump off and on.
 
 
 ## Get Player's Rotation
