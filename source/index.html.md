@@ -82,9 +82,6 @@ Retrieve block type located at position x, y, z
 
 <img src="images/GetBlock.png" alt="Get Block" width="250" height="100"/>
 
-```python
-blockType = mc.getBlock(0, 0, 0)
-```
 > Retrives block type at position 0,0,0
 
 
@@ -93,11 +90,6 @@ Get all block ids ranging from one position to another.
 
 <img src="images/GetBlocks.png" alt="Get Blocks" width="250" height="100"/>
 
-```python
-blocks = mc.getBlocks(-1, -1, -1, 1, 1, 1)
-for block in blocks:
-   print(block)
-```
 > Prints all block ids in a cuboid.
 
 
@@ -106,10 +98,6 @@ Get the block Type and corresponding ID.
 
 <img src="images/GetBlockWithData.png" alt="Get Block with Data" width="250" height="100"/>
 
-
-```python
-blockObj = mc.getBlockWithData(0,0,0)
-```
 > retrieves a block object for the block at 0,0,0 
 
 ## Set Block
@@ -117,15 +105,8 @@ Sets a block at an x,y,z coordinate to a particular type.
 
 <img src="images/SetBlock.png" alt="Set Block" width="250" height="100"/>
 
-
-```python
-mc.setBlock(0, 0, 0, block.DIRT.id)
-```
 > sets a block at an x,y,z coordinate to a particular type.
 
-```python
-mc.setBlock(0,0,0,block.WOOD.id, 1)
-```
 > sets a block to a particular type and subtype.
 
 ## Set Blocks
@@ -133,10 +114,6 @@ Set many blocks at a time, filling the gap between 2 sets of x,y,z coordinates.
 
 <img src="images/SetBlocks.png" alt="Set several Blocks" width="250" height="100"/>
 
-
-```python
-mc.setBlocks(-1, -1, -1, 1, 1, 1, block.STONE.id)
-```
 > Sets many blocks at a time, filling the gap between 2 sets of x,y,z coordinates.
 
 ## Get Height
@@ -145,9 +122,6 @@ Find the Y(vertical) of an x,z coordinate which represents the highest (non-air)
 <img src="images/GetHeight.png" alt="Get Height" width="250" height="100"/>
 
 
-```python
-y = mc.getHeight(0,0)
-```
 > Find the y (vertical) of an x,z coordinate which represents the highest (non-air) block.
 
 ## Get Player Entity IDs
@@ -156,9 +130,6 @@ Get the entity IDs of the players connected to the game.
 <img src="images/GetPlayerIds.png" alt="Get IDs of players in game" width="250" height="100"/>
 
 
-```python
-entityIds = mc.getPlayerEntityIds()
-```
 > get the entity ids of the players connected to the game.
 
 ## Get Player ID
@@ -166,9 +137,7 @@ Get the entity ID of a player
 
 <img src="images/GetPlayerID.png" alt="Get a Player ID" width="250" height="100"/>
 
-```python
-entityId = mc.getPlayerId("martinohanlon")
-```
+
 > Get the entity id of a player named "martinohanlon".
 
 ## Post to Chat
@@ -176,9 +145,6 @@ Writes the message to the chat window
 
 <img src="images/PostToChat.png" alt="Post message to chat" width="250" height="100"/>
  
-```python
-mc.postToChat("Hello Minecraft World")
-```
 > Writes the message "Hello Minecraft World" to the chat window.
 
 
@@ -191,10 +157,6 @@ Outputs a Vec3 object with player's current position.
 <img src="images/GetPlayerPos.png" alt="Get Player Position" width="250" height="100"/>
 
 
-```python
-  mc.player.getPos()
-
-```
 > Retrieves current position of the player.
 
 ## Set Player's Position
@@ -204,55 +166,56 @@ Change where you are now to a new position
  
 <img src="images/SetPlayerPos.png" alt="Set Player Position" width="250" height="100"/>
 
-```python
-mc.player.setPos(10, 10, 10)
-```
 > Sets player's position to be at (10, 10, 10)
 
 
 ## Get Tile Position
 Output: Vec3 object of tile coordinates.
-```python
-playerPos = mc.player.getTilePos()
-```
+
+<img src="images/GetPosUnderPlayer.png" alt="Get Tile Position" width="250" height="100"/>
+
 > Get player position as floats
 
 
 ## Set Tile Position
 Input: x,y,z (can be grouped into a single Vec3 object)
-```python
-mc.player.setTilePos(1,1,1)
-```
+
+<img src="images/SetPlayersPosOnTopOf.png" alt="Set player's position to tile" width="250" height="100"/>
+
+
 > Move player to tile.
 
 
 ## Get Player's Rotation
 Output: Rotation angle as float
-```python
-playerRot = mc.player.getRotation()
-print(playerRot)
-```
+
+<img src="images/GetPlayersAngleOfRotation.png" alt="Get Tile Position" width="250" height="100"/>
+
+
 > Get and print player rotation.
 
 
 ## Get Player's Pitch
 Output: Pitch angle as float
-```python
-playerPitch = mc.player.getPitch()
-```
+
+<img src="images/GetPlayersPitch.png" alt="Get Tile Position" width="250" height="100"/>
+
+
 > Get and print player pitch.
 
 ## Get Player's Direction
 Output: Player direction as Vec3 object.
-```python
-playerDirection = mc.player.getDirection()
-print(playerDirection)
-```
+
+<img src="images/GetPlayersDirection.png" alt="Get Player's Direction" width="250" height="100"/>
+
 > Get and print player direction
 
 # Position
 
 **COME BACK TO!!!!!** 
+
+<img src="images/Position.png" alt="Modify Position" width="350" height="100"/>
+
 
 
 # Entity
@@ -260,73 +223,68 @@ print(playerDirection)
 
 ## Get Entity's Position
 Input: Entity ID (can get using mc.getPlayerIds())
-```python
-entityPos = mc.entity.getPos(entityIds[0])
-print("entity pos", entityPos)
-```
+
+<img src="images/GetEntitysPos.png" alt="Get Entity's Position" width="250" height="100"/>
+
+
 > Get player's position
 
 
 ## Set Entity's Position
 Input:
 * Entity ID (can get using mc.getPlayerIds())
+
 * x,y,z coordinates (can be grouped in Vec3 object)
-```python
-entityPos = mc.entity.getPos(entityIds[0])
-print("entity pos", entityPos)
-mc.entity.setPos(entityIds[0], 20, 20, 20)
-time.sleep(2)
-mc.entity.setPos(entityIds[0], entityPos)
-```
+
+<img src="images/SetEntityPos.png" alt="Set Entity's Position" width="250" height="100"/>
+
 > 
 
 ## Get Position of Tile Underneath Entity
 Input: Entity ID
 Output: Vec3 position of the tile that an entity is on.
-```python
- entityTilePos = mc.entity.getTilePos(entityIds[0])
-print("Entity tile pos", entityTilePos)
-```
+
+<img src="images/GetPosDirectlyUnderEntity.png" alt="Get Position of Tile Under Entity" width="250" height="100"/>
+
+
 > Print Position of tile entity is on.
 
 ## Set New Position Underneath Entity
 Input: 
 * Entity ID
 * x,y,z coordinates (can be grouped in a Vec3 object)
-```python
-mc.entity.setTilePos(entityIds[0], 15, 1, 25)
-time.sleep(2)
-mc.entity.setTilePos(entityIds[0], entityTilePos)
-```
+
+<img src="images/SetNewPositionUnderEntity.png" alt="Set Entity's New Position" width="250" height="100"/>
+
+
 > Change entity position
 
 
 ## Get Entity's Rotation
 Input: Entity ID
 Output: Entity rotation angle
-```python
-entityRot = mc.entity.getRotation(entityIds[0])
-mc.postToChat(entityRot)
-```
+
+<img src="images/GetEntitysRotation.png" alt="Get Entity's Rotation" width="250" height="100"/>
+
+
 > Get entity rotation.
 
 ## Get Entity's Pitch
 Input: Entity ID
 Output: Entity Pitch Angle
-```python
-entityPitch = mc.entity.getPitch(entityIds[0])
-mc.postToChat(entityPitch)
-```
+
+<img src="images/GetEntitysPitch.png" alt="Get Entity's Pitch" width="250" height="100"/>
+
+
 > Get entity pitch
 
 ## Get Entity's Direction
 Input: Entity ID
 Output: Vec3 object of entity direction.
-```python
-entityDirection = mc.entity.getDirection(entityIds[0])
-mc.postToChat("Entity direction = ")
-mc.postToChat(entityDirection)
-```
+
+<img src="images/GetEntitysDirection.png" alt="Get Entity's Position" width="250" height="100"/>
+
+
 > Get entity direction
 
 
