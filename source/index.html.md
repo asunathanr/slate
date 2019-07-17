@@ -14,9 +14,7 @@ toc_footers:
 
 **File Name**: Enter the name of your script. 
 
-**Naming Exceptions**:
-
-Cannot contain the following characters: 
+**Naming Exceptions**: Cannot contain the following characters: 
 
 * ? (Question Mark) 
 
@@ -36,8 +34,8 @@ Cannot contain the following characters:
 
 * \> (Greater Than)
 
-**Create Script**:
 
+##Create Script
 
 ### Save and Load Blocks
 
@@ -66,86 +64,71 @@ Click Workspace to return to block view.
 This is the documentation for the Picrafty API. Each block and its
 corresponding python code is documented here.  
 
-This API is based around three classes given in the Raspberry Juice mod used to control the minecraft game world inside Python scripts  
+This API is based around three classes given in the Raspberry Juice mod used to control the minecraft game world inside Python scripts
+
 1. Minecraft --- Main class for connecting to and interacting with the game.  
 2. Player --- Getting and changing a player's position and settings.  
 3. Entity --- Getting and changing an entity's position and settings.  
 
-This documentation is a spin-off of documentation for Raspberry Juice found at: **Add source here**.  
+This documentation is a spin-off of documentation for Raspberry Juice found at: **https://www.stuffaboutcode.com/p/minecraft-api-reference.html**  
 
 
 # Minecraft
 
-
 ## Get Block
 Retrieve block type located at position x, y, z
 
-<img src="images/GetBlock.png" alt="Get Block" width="250" height="100"/>
-
-> Retrives block type at position 0,0,0
+<img src="images/GetBlock.png" alt="Get block" width="250" height="100"/>
 
 
 ## Get Blocks
-Get all block ids ranging from one position to another.
+Get all block IDs ranging from one position to another.
 
-<img src="images/GetBlocks.png" alt="Get Blocks" width="250" height="100"/>
-
-> Prints all block ids in a cuboid.
+<img src="images/GetBlocks.png" alt="Get multiple blocks" width="250" height="100"/>
 
 
 ## Get Block Type and ID
 Get the block Type and corresponding ID.
 
-<img src="images/GetBlockWithData.png" alt="Get Block with Data" width="250" height="100"/>
+<img src="images/GetBlockWithData.png" alt="Get block with data" width="250" height="100"/>
 
-> retrieves a block object for the block at 0,0,0 
 
 ## Set Block
-Sets a block at an x,y,z coordinate to a particular type.
+Sets a block at an x, y, z coordinate to a particular type.
 
-<img src="images/SetBlock.png" alt="Set Block" width="250" height="100"/>
+<img src="images/SetBlock.png" alt="Set block" width="250" height="150"/>
 
-> sets a block at an x,y,z coordinate to a particular type.
-
-> sets a block to a particular type and subtype.
 
 ## Set Blocks
-Set many blocks at a time, filling the gap between 2 sets of x,y,z coordinates.
+Set many blocks at a time, filling the gap between 2 sets of x, y, z coordinates.
 
-<img src="images/SetBlocks.png" alt="Set several Blocks" width="250" height="100"/>
+<img src="images/SetBlocks.png" alt="Set multiple blocks" width="250" height="200"/>
 
-> Sets many blocks at a time, filling the gap between 2 sets of x,y,z coordinates.
 
 ## Get Height
-Find the Y(vertical) of an x,z coordinate which represents the highest (non-air) block.
+Find the y(vertical) of an x, z coordinate which represents the highest (non-air) block.
 
-<img src="images/GetHeight.png" alt="Get Height" width="250" height="100"/>
+<img src="images/GetHeight.png" alt="Get height" width="250" height="100"/>
 
-
-> Find the y (vertical) of an x,z coordinate which represents the highest (non-air) block.
 
 ## Get Player Entity IDs
 Get the entity IDs of the players connected to the game.
 
-<img src="images/GetPlayerIds.png" alt="Get IDs of players in game" width="250" height="100"/>
+<img src="images/GetPlayerIds.png" alt="Get IDs of players in game" width="250" height="85"/>
 
-
-> get the entity ids of the players connected to the game.
 
 ## Get Player ID
 Get the entity ID of a player
 
-<img src="images/GetPlayerID.png" alt="Get a Player ID" width="250" height="100"/>
+<img src="images/GetPlayerID.png" alt="Get a player's ID" width="250" height="85"/>
 
-
-> Get the entity id of a player named "martinohanlon".
 
 ## Post to Chat
 Writes the message to the chat window
 
 <img src="images/PostToChat.png" alt="Post message to chat" width="250" height="100"/>
  
-> Writes the message "Hello Minecraft World" to the chat window.
+
 
 
 # Player
@@ -154,140 +137,121 @@ Writes the message to the chat window
 
 Outputs a Vec3 object with player's current position.
 
-<img src="images/GetPlayerPos.png" alt="Get Player Position" width="250" height="100"/>
+<img src="images/GetPlayerPos.png" alt="Get player position" width="250" height="125"/>
 
-
-> Retrieves current position of the player.
 
 ## Set Player's Position
-Change where you are now to a new position
-### Input
- x,y,z coordinates (can be grouped in a Vec3 object)
- 
-<img src="images/SetPlayerPos.png" alt="Set Player Position" width="250" height="100"/>
+Change player's current location to a new position
 
-> Sets player's position to be at (10, 10, 10)
+### Input
+ x, y, z coordinates (can be grouped in a Vec3 object)
+ 
+<img src="images/SetPlayerPos.png" alt="Set player position" width="250" height="100"/>
 
 
 ## Get Tile Position
 Output: Vec3 object of tile coordinates.
 
-<img src="images/GetPosUnderPlayer.png" alt="Get Tile Position" width="250" height="100"/>
-
-> Get player position as floats
+<img src="images/GetPosUnderPlayer.png" alt="Get tile position" width="250" height="100"/>
 
 
 ## Set Tile Position
-Input: x,y,z (can be grouped into a single Vec3 object)
+Input: x, y, z (can be grouped into a single Vec3 object)
 
 <img src="images/SetPlayersPosOnTopOf.png" alt="Set player's position to tile" width="250" height="100"/>
-
-
-> Move player to tile.
 
 
 ## Get Player's Rotation
 Output: Rotation angle as float
 
-<img src="images/GetPlayersAngleOfRotation.png" alt="Get Tile Position" width="250" height="100"/>
-
-
-> Get and print player rotation.
+<img src="images/GetPlayersAngleOfRotation.png" alt="Get player's angle of rotation" width="250" height="100"/>
 
 
 ## Get Player's Pitch
 Output: Pitch angle as float
 
-<img src="images/GetPlayersPitch.png" alt="Get Tile Position" width="250" height="100"/>
+<img src="images/GetPlayersPitch.png" alt="Get player's angle of pitch" width="250" height="100"/>
 
-
-> Get and print player pitch.
 
 ## Get Player's Direction
 Output: Player direction as Vec3 object.
 
-<img src="images/GetPlayersDirection.png" alt="Get Player's Direction" width="250" height="100"/>
+<img src="images/GetPlayersDirection.png" alt="Get player's direction" width="250" height="100"/>
 
-> Get and print player direction
+
+
 
 # Position
 
-**COME BACK TO!!!!!** 
+<img src="images/PositionModify.png" alt="Modify position" width="400" height="100"/>
 
-<img src="images/Position.png" alt="Modify Position" width="350" height="100"/>
 
 
 
 # Entity
 
-
 ## Get Entity's Position
 Input: Entity ID (can get using mc.getPlayerIds())
 
-<img src="images/GetEntitysPos.png" alt="Get Entity's Position" width="250" height="100"/>
-
-
-> Get player's position
+<img src="images/GetEntitysPos.png" alt="Get entity's position" width="350" height="100"/>
 
 
 ## Set Entity's Position
-Input:
-* Entity ID (can get using mc.getPlayerIds())
+Input: Entity ID (can get using mc.getPlayerIds())
 
-* x,y,z coordinates (can be grouped in Vec3 object)
+* x, y, z coordinates (can be grouped in Vec3 object)
 
-<img src="images/SetEntityPos.png" alt="Set Entity's Position" width="250" height="100"/>
+<img src="images/SetEntityPos.png" alt="Set entity's position" width="350" height="100"/>
 
-> 
 
 ## Get Position of Tile Underneath Entity
 Input: Entity ID
+
 Output: Vec3 position of the tile that an entity is on.
 
-<img src="images/GetPosDirectlyUnderEntity.png" alt="Get Position of Tile Under Entity" width="250" height="100"/>
+<img src="images/GetPosDirectlyUnderEntity.png" alt="Get position of tile under entity" width="350" height="100"/>
 
-
-> Print Position of tile entity is on.
 
 ## Set New Position Underneath Entity
 Input: 
 * Entity ID
-* x,y,z coordinates (can be grouped in a Vec3 object)
 
-<img src="images/SetNewPositionUnderEntity.png" alt="Set Entity's New Position" width="250" height="100"/>
+* x, y, z coordinates (can be grouped in a Vec3 object)
 
-
-> Change entity position
+<img src="images/SetNewPositionUnderEntity.png" alt="Set entity's new position" width="450" height="100"/>
 
 
 ## Get Entity's Rotation
 Input: Entity ID
+
 Output: Entity rotation angle
 
-<img src="images/GetEntitysRotation.png" alt="Get Entity's Rotation" width="250" height="100"/>
+<img src="images/GetEntitysRotation.png" alt="Get entity's rotation" width="350" height="100"/>
 
-
-> Get entity rotation.
 
 ## Get Entity's Pitch
 Input: Entity ID
+
 Output: Entity Pitch Angle
 
-<img src="images/GetEntitysPitch.png" alt="Get Entity's Pitch" width="250" height="100"/>
+<img src="images/GetEntitysPitch.png" alt="Get entity's pitch" width="350" height="100"/>
 
-
-> Get entity pitch
 
 ## Get Entity's Direction
 Input: Entity ID
+
 Output: Vec3 object of entity direction.
 
-<img src="images/GetEntitysDirection.png" alt="Get Entity's Position" width="250" height="100"/>
+<img src="images/GetEntitysDirection.png" alt="Get entity's position" width="350" height="100"/>
 
 
-> Get entity direction
 
 
 # Block
 
+## Modify Block
+Input: Takes block variable
 
+Output: New block type
+
+<img src="images/ModifyBlock.png" alt="Modifies block" width="400" height="100"/>
