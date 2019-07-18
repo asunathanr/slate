@@ -76,31 +76,31 @@ This documentation is a spin-off of documentation for Raspberry Juice found at: 
 # Minecraft
 
 ## Get Block
-Retrieve block type located at position x, y, z
+Retrieve block type located at Position variable
 
 <img src="images/GetBlock.png" alt="Get block" width="250" height="100"/>
 
 
 ## Get Blocks
-Get all block IDs ranging from one position to another.
+Get all block IDs ranging from one position to another
 
 <img src="images/GetBlocks.png" alt="Get multiple blocks" width="250" height="100"/>
 
 
 ## Get Block Type and ID
-Get the block Type and corresponding ID.
+Get the block Type and corresponding ID
 
 <img src="images/GetBlockWithData.png" alt="Get block with data" width="250" height="100"/>
 
 
 ## Set Block
-Sets a block at an x, y, z coordinate to a particular type.
+Sets a block at a Position variable to a particular type
 
 <img src="images/SetBlock.png" alt="Set block" width="250" height="150"/>
 
 
 ## Set Blocks
-Set many blocks at a time, filling the gap between 2 sets of x, y, z coordinates.
+Set many blocks at a time, filling the gap between 2 sets of Position variables
 
 <img src="images/SetBlocks.png" alt="Set multiple blocks" width="250" height="200"/>
 
@@ -135,7 +135,7 @@ Writes the message to the chat window
 
 ## Get Player's Position
 
-Outputs a Vec3 object with player's current position.
+Outputs player's current position.
 
 <img src="images/GetPlayerPos.png" alt="Get player position" width="250" height="125"/>
 
@@ -144,19 +144,19 @@ Outputs a Vec3 object with player's current position.
 Change player's current location to a new position
 
 ### Input
- x, y, z coordinates (can be grouped in a Vec3 object)
+ Position variable
  
 <img src="images/SetPlayerPos.png" alt="Set player position" width="250" height="100"/>
 
 
 ## Get Tile Position
-Output: Vec3 object of tile coordinates.
+Output: Position of tile coordinates.
 
 <img src="images/GetPosUnderPlayer.png" alt="Get tile position" width="250" height="100"/>
 
 
 ## Set Tile Position
-Input: x, y, z (can be grouped into a single Vec3 object)
+Input: Position variable
 
 <img src="images/SetPlayersPosOnTopOf.png" alt="Set player's position to tile" width="250" height="100"/>
 
@@ -174,7 +174,7 @@ Output: Pitch angle as float
 
 
 ## Get Player's Direction
-Output: Player direction as Vec3 object.
+Output: Player direction as Position variable
 
 <img src="images/GetPlayersDirection.png" alt="Get player's direction" width="250" height="100"/>
 
@@ -199,7 +199,7 @@ Input: Entity ID (can get using mc.getPlayerIds())
 ## Set Entity's Position
 Input: Entity ID (can get using mc.getPlayerIds())
 
-* x, y, z coordinates (can be grouped in Vec3 object)
+* Position variable
 
 <img src="images/SetEntityPos.png" alt="Set entity's position" width="350" height="100"/>
 
@@ -207,7 +207,7 @@ Input: Entity ID (can get using mc.getPlayerIds())
 ## Get Position of Tile Underneath Entity
 Input: Entity ID
 
-Output: Vec3 position of the tile that an entity is on.
+Output: Position variable of the tile that an entity is on
 
 <img src="images/GetPosDirectlyUnderEntity.png" alt="Get position of tile under entity" width="350" height="100"/>
 
@@ -216,7 +216,7 @@ Output: Vec3 position of the tile that an entity is on.
 Input: 
 * Entity ID
 
-* x, y, z coordinates (can be grouped in a Vec3 object)
+* Position variable
 
 <img src="images/SetNewPositionUnderEntity.png" alt="Set entity's new position" width="450" height="100"/>
 
@@ -240,7 +240,7 @@ Output: Entity Pitch Angle
 ## Get Entity's Direction
 Input: Entity ID
 
-Output: Vec3 object of entity direction.
+Output: Position variable of entity direction
 
 <img src="images/GetEntitysDirection.png" alt="Get entity's position" width="350" height="100"/>
 
